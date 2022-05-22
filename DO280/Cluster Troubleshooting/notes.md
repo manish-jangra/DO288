@@ -21,3 +21,29 @@
     chroot /host
     systemctl is-active kubelet
     crictl ps                   # This helps to get low level containers running on Cluster Nodes
+
+#### Troubleshooting running and terminated pods
+
+    oc logs pod-name
+    oc logs -f pod-name
+    oc logs pod-name -c container-name
+    oc logs pod-name --all-containers
+
+#### Creating Troubleshooting Pods
+
+    oc debug deployment/deployment-name --as-root
+
+#### Changing a running container
+
+    oc rsh my-pod-name      # Logs in the pod/container shell
+    oc rsh my-pod-name -c container-name        # in case of multiple containers in single pod
+    oc cp /local/path my-pod-name:/container/path
+    oc rsync
+
+#### Miscellaneous Commands
+    >**Note**
+    > The --loglevel level option displays OpenShift API requests, starting with level 6. As you increase the level, up to 10, more information about those requests is added. Level 10 also includes a curl command to replicate each request.
+    
+    oc get pod --loglevel 6
+    oc get pod --loglevel 10
+    oc whoami -t
