@@ -21,6 +21,9 @@
     chroot /host
     systemctl is-active kubelet
     crictl ps                   # This helps to get low level containers running on Cluster Nodes
+    systemctl status kubelet
+    systemctl status cri-o
+    crictl ps --name openvswitch    #crictl is more like docker and podman command, this checks for openvmswitch pod
 
 #### Troubleshooting running and terminated pods
 
@@ -28,6 +31,7 @@
     oc logs -f pod-name
     oc logs pod-name -c container-name
     oc logs pod-name --all-containers
+    oc get events -n namespace-name
 
 #### Creating Troubleshooting Pods
 
