@@ -1,4 +1,6 @@
-#### Troubleshooting Cluster
+### Cluster Troubleshooting
+
+#### Get Cluster Details
 
     oc get nodes
     oc adm top nodes
