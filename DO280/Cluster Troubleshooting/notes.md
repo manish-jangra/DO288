@@ -41,8 +41,8 @@
     oc rsync
 
 #### Miscellaneous Commands
-    >**Note**
-    > The --loglevel level option displays OpenShift API requests, starting with level 6. As you increase the level, up to 10, more information about those requests is added. Level 10 also includes a curl command to replicate each request.
+>**Note**
+> The --loglevel level option displays OpenShift API requests, starting with level 6. As you increase the level, up to 10, more information about those requests is added. Level 10 also includes a curl command to replicate each request.
     
     oc get pod --loglevel 6
     oc get pod --loglevel 10
