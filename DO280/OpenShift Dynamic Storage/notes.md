@@ -22,4 +22,3 @@
 #### Trick to get k8s resource properties using custom-column
 
     oc get pv -o custom-columns=NAME:.metadata.name,CLAIM:.spec.claimRef.name
-    image.png
