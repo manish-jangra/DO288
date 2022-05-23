@@ -8,3 +8,9 @@
     --add --name example-storage --type pvc --claim-class nfs-storage \
     --claim-mode rwo --claim-size 15Gi --mount-path /var/lib/example-app \
     --claim-name example-storage
+
+| Access Mode       | CLI Abbreviation  |
+| ------------------| ------------------|
+| ReadWriteMany     | RWX               |
+| ReadWriteOnce     | RWO               |
+| ReadOnlyMany      | ROX               |
