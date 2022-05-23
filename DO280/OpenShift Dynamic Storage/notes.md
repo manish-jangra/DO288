@@ -14,3 +14,7 @@
 | ReadWriteMany     | RWX               |
 | ReadWriteOnce     | RWO               |
 | ReadOnlyMany      | ROX               |
+
+#### Delete PVC
+
+    oc delete pvc/example-pvc-storage
