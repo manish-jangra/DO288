@@ -13,6 +13,6 @@
 
     htpasswd -b /tmp/htpasswd student redhat1234
 
-##### Delete credentials
+#### Delete credentials
 
     htpasswd -D /tmp/htpasswd student
