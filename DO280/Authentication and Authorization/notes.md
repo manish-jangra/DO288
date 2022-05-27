@@ -6,4 +6,4 @@
 
 - Create the htpasswd file
     
-    htpasswd -c -B -b /tmp/htpasswd student redhat123
+        htpasswd -c -B -b /tmp/htpasswd student redhat123
