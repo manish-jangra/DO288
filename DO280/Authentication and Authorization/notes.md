@@ -19,22 +19,23 @@
 #### Updating the OAuth Custom Resource
     oc get oauth cluster -o yaml > oauth.yaml
     
-    - oauth.yaml
-        apiVersion: config.openshift.io/v1
-        kind: OAuth
-        metadata:
-          name: cluster
-        spec:
-          identityProviders:
-          - name: my_htpasswd_provider
-            mappingMethod: claim
-            type: HTPasswd
-            htpasswd:
-              fileData:
-                name: htpasswd-secret
+Modify oauth.yaml file
+
+    apiVersion: config.openshift.io/v1
+    kind: OAuth
+    metadata:
+      name: cluster
+    spec:
+      identityProviders:
+      - name: my_htpasswd_provider
+        mappingMethod: claim
+        type: HTPasswd
+        htpasswd:
+          fileData:
+            name: htpasswd-secret
     
-    - update the oauth
-        oc replace -f oauth.yaml
+update the oauth
+    oc replace -f oauth.yaml
 
 #### Extracting Secret Data
     oc extract secret/htpasswd-secret -n openshift-config \
