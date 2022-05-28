@@ -37,4 +37,14 @@
 >**Important**
 > If the mount point already exists in the pod, then any existing files at the mount point are obscured by the mounted secret. The existing files are not visible and are not accessible.
 
+#### Create ConfigMap
+    oc create configmap my-config \
+        --from-literal key1=config1 --from-literal key2=config2
+
+>**Note**
+> Secrets and configuration maps occasionally require updates. Use the oc extract command to ensure you have the latest data. Save the data to a specific directory using the --to option. Each key in the secret or configuration map creates a file with the same name as the key. The content of each file is the value of the associated key. If you run the oc extract command more than once, then use the --confirm option to overwrite the existing files
+
+    oc extract secret/htpasswd-ppklq -n openshift-config --to /tmp/ --confirm
+    oc set data secret/htpasswd-ppklq -n openshift-config --from-file /tmp/htpasswd
+
 ### Security Context Constraints (SCC)
