@@ -79,8 +79,8 @@ spec:
 | -------------------------| ------------------------------------------------------------------------------------------------------------------------------------|
 | admin                    | Users with this role can manage all project resources, including granting access to other users to access the project               |
 | basic-user               | Users with this role have read access to the project.                                                                               |
-| cluster-admin            | Users with this role have superuser access to the cluster resources. These users can perform any action on the cluster, and have full control of all projects.                                                                                                                                    |
+| cluster-admin            | Users with this role have superuser access to the cluster resources. These users can perform any action on the cluster              |
 | cluster-status           | Users with this role can get cluster status information.                                                                            |
-| edit                     | Users with this role can create, change, and delete common application resources from the project, such as services and deployments. These users cannot act on management resources such as limit ranges and quotas, and cannot manage access permissions to the project.                        |
+| edit                     | Users with this role can create, change, and delete common application resources but not management resources                       |
 | self-provisioner         | Users with this role can create new projects. This is a cluster role, not a project role.                                           |
 | view                     | Users with this role can view project resources, but cannot modify project resources.                                               |
