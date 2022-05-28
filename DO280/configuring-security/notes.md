@@ -28,4 +28,13 @@
 
     oc set env deployment/demo --from secret/demo-secret --prefix MYSQL_
 
+#### Secrets as Files in a Pod
+    oc set volume deployment/demo \
+        --add --type secret \
+        --secret-name demo-secret \
+        --mount-path /app-secrets
+
+>**Important**
+> If the mount point already exists in the pod, then any existing files at the mount point are obscured by the mounted secret. The existing files are not visible and are not accessible.
+
 ### Security Context Constraints (SCC)
