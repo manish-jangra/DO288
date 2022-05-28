@@ -75,12 +75,12 @@
 
 #### Default Roles
 
-    | Default Roles       | Description                                                                                                                         |
-    | --------------------| ------------------------------------------------------------------------------------------------------------------------------------|
-    | admin               | Users with this role can manage all project resources, including granting access to other users to access the project               |
-    | basic-user          | Users with this role have read access to the project.                                                                               |
-    | cluster-admin       | Users with this role have superuser access to the cluster resources. These users can perform any action on the cluster              |
-    | cluster-status      | Users with this role can get cluster status information.                                                                            |
-    | edit                | Users with this role can manage project resources but can not act on management resources, like granting access and creating user   |
-    | self-provisioner    | Users with this role can create new projects. This is a cluster role, not a project role.                                           |
-    | view                | Users with this role can view project resources, but cannot modify project resources.                                               |
+| Default Roles       | Description                                                                                                                         |
+| --------------------| ------------------------------------------------------------------------------------------------------------------------------------|
+| admin               | Users with this role can manage all project resources, including granting access to other users to access the project               |
+| basic-user          | Users with this role have read access to the project.                                                                               |
+| cluster-admin       | Users with this role have superuser access to the cluster resources. These users can perform any action on the cluster              |
+| cluster-status      | Users with this role can get cluster status information.                                                                            |
+| edit                | Users with this role can manage project resources but can not act on management resources, like granting access and creating user   |
+| self-provisioner    | Users with this role can create new projects. This is a cluster role, not a project role.                                           |
+| view                | Users with this role can view project resources, but cannot modify project resources.                                               |
