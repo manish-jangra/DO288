@@ -48,3 +48,18 @@
     oc set data secret/htpasswd-ppklq -n openshift-config --from-file /tmp/htpasswd
 
 ### Security Context Constraints (SCC)
+
+You can run the following command as a cluster administrator to list the SCCs defined by OpenShift.
+
+    oc get scc
+
+>**Note**
+> OpenShift provides eight default SCCs
+* anyuid
+* hostaccess
+* hostmount-anyuid
+* hostnetwork
+* node-exporter
+* nonroot
+* privileged
+* restricted
