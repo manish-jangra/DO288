@@ -62,3 +62,10 @@
 
 #### Assigning Administrative Privileges
     oc adm policy add-cluster-role-to-user cluster-admin student
+
+#### Delete secret created from htpasswd file, all users and their identities
+    oc delete secret localusers -n openshift-config
+
+    oc delete user --all
+
+    oc delete identity --all
