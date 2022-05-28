@@ -86,6 +86,9 @@ spec:
 | view                     | Users with this role can view project resources, but cannot modify project resources.                                               |
 
 ### Managing RBAC Using the CLI
-**Add a cluster role to a user**
+Add a cluster role to a user:
     oc adm policy add-cluster-role-to-user cluster-role username
+
+Remove a cluster role from a user:
+    oc adm policy remove-cluster-role-from-user cluster-role username
     
