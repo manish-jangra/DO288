@@ -19,7 +19,7 @@
 #### Updating the OAuth Custom Resource
     oc get oauth cluster -o yaml > oauth.yaml
     
-<oauth.yaml>
+# YAML
     apiVersion: config.openshift.io/v1
     kind: OAuth
     metadata:
