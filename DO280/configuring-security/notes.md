@@ -63,3 +63,9 @@ You can run the following command as a cluster administrator to list the SCCs de
 * **nonroot**
 * **privileged**
 * **restricted**
+
+#### get additional information about an SCC
+    oc describe scc anyuid
+
+Use the scc-subject-review subcommand to list all the security context constraints that can overcome the limitations of a container:
+    oc get pod podname -o yaml | oc adm policy scc-subject-review -f -
