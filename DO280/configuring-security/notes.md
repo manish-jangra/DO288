@@ -64,8 +64,20 @@ You can run the following command as a cluster administrator to list the SCCs de
 * **privileged**
 * **restricted**
 
-#### get additional information about an SCC
+#### Get additional information about an SCC
     oc describe scc anyuid
 
-Use the scc-subject-review subcommand to list all the security context constraints that can overcome the limitations of a container:
+#### Use the scc-subject-review subcommand to list all the security context constraints that can overcome the limitations of a container
     oc get pod podname -o yaml | oc adm policy scc-subject-review -f -
+
+#### Create a Serviceaccount
+    oc create serviceaccount service-account-name
+
+>**Note**
+> To associate the service account with an SCC, use the oc adm policy command. Use the - z option to identify a service account, and use the -n option if the service account exists in a namespace different than the current one:
+    oc adm policy add-scc-to-user SCC -z service-account
+
+>**Note**
+> Assigning an SCC to a service account or removing an SCC from a service account must be performed by a cluster administrator. Allowing pods to run with a less restrictive SCC can make your cluster less secure. Use with caution.
+
+    oc set serviceaccount deployment/deployment-name service-account-name
