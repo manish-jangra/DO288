@@ -94,4 +94,7 @@ spec:
 
 #### Add a specified role to a user at project level
     oc policy add-role-to-user role-name username -n project
+
+#### Remove self-provisioners cluster role from a group called authenticated users
+    oc adm policy remove-cluster-role-from-group self-provisioner system:authenticated:oauth
     
