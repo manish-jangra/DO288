@@ -74,7 +74,8 @@ You can run the following command as a cluster administrator to list the SCCs de
     oc create serviceaccount service-account-name
 
 >**Note**
-> To associate the service account with an SCC, use the oc adm policy command. Use the - z option to identify a service account, and use the -n option if the service account exists in a namespace different than the current one:
+> To associate the service account with an SCC, use the oc adm policy command. Use the - z option to identify a service account, and use the -n option if the service account exists in a namespace different than the current one
+
     oc adm policy add-scc-to-user SCC -z service-account
 
 >**Note**
