@@ -97,4 +97,23 @@ spec:
 
 #### Remove self-provisioners cluster role from a group called authenticated users
     oc adm policy remove-cluster-role-from-group self-provisioner system:authenticated:oauth
-    
+
+#### Create a user
+    oc adm groups new group-name
+
+#### Add user to a group
+    oc adm groups add-users group-name username
+
+#### Get groups
+    oc get groups
+
+#### Add role to a group at project level
+    oc policy add-role-to-group role-name group-name -n project
+
+#### Get role binding for a project
+    oc get rolebindings -o wide -n project
+
+#### Add self-provisioners role to system:authenticated:oauth
+    oc adm policy add-cluster-role-to-group \
+    --rolebinding-name self-provisioners \
+    self-provisioner system:authenticated:oauth
