@@ -55,11 +55,11 @@ You can run the following command as a cluster administrator to list the SCCs de
 
 >**Note**
 > OpenShift provides eight default SCCs
-* anyuid
-* hostaccess
-* hostmount-anyuid
-* hostnetwork
-* node-exporter
-* nonroot
-* privileged
-* restricted
+anyuid
+hostaccess
+hostmount-anyuid
+hostnetwork
+node-exporter
+nonroot
+privileged
+restricted
