@@ -87,6 +87,5 @@ spec:
 
 ### Managing RBAC Using the CLI
 **Add a cluster role to a user**
-    ```
     oc adm policy add-cluster-role-to-user cluster-role username
-    ```
+    
