@@ -26,7 +26,6 @@
 >**Important**
 > You can also use the oc set env command to set application environment variables from either secrets or configuration maps. In some cases, the names of the keys can be modified to match the names of environment variables by using the --prefix option. In the following example, the user key sets the MYSQL_USER environment variable, and the root_password key sets the MYSQL_ROOT_PASSWORD environment variable. If the key name is lowercase, then the corresponding environment variable is converted to uppercase
 
-    oc set env deployment/demo --from secret/demo-secret \
-        --prefix MYSQL_
+    oc set env deployment/demo --from secret/demo-secret --prefix MYSQL_
 
 ### Security Context Constraints (SCC)
