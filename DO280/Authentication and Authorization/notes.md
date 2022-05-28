@@ -37,6 +37,9 @@ spec:
 #### update the oauth
     oc replace -f oauth.yaml
 
+#### Check the status of pods after changing oauth
+    watch oc get pods -n openshift-authentication
+
 #### Extracting Secret Data
     oc extract secret/htpasswd-secret -n openshift-config \
     --to /tmp/ --confirm /tmp/htpasswd
@@ -114,6 +117,4 @@ spec:
     oc get rolebindings -o wide -n project
 
 #### Add self-provisioners role to system:authenticated:oauth
-    oc adm policy add-cluster-role-to-group \
-    --rolebinding-name self-provisioners \
-    self-provisioner system:authenticated:oauth
+    oc adm policy add-cluster-role-to-group --rolebinding-name self-provisioners self-provisioner system:authenticated:oauth
