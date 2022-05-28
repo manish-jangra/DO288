@@ -13,8 +13,7 @@
     htpasswd -D /tmp/htpasswd student
 
 #### Creating the HTPasswd Secret
-    oc create secret generic htpasswd-secret \
-    --from-file htpasswd=/tmp/htpasswd -n openshift-config
+    oc create secret generic htpasswd-secret --from-file htpasswd=/tmp/htpasswd -n openshift-config
 
 #### Updating the OAuth Custom Resource
     oc get oauth cluster -o yaml > oauth.yaml
@@ -41,21 +40,17 @@ spec:
     watch oc get pods -n openshift-authentication
 
 #### Extracting Secret Data
-    oc extract secret/htpasswd-secret -n openshift-config \
-    --to /tmp/ --confirm /tmp/htpasswd
+    oc extract secret/htpasswd-secret -n openshift-config --to /tmp/ --confirm /tmp/htpasswd
 
 #### Updating the HTPasswd Secret
-    oc set data secret/htpasswd-secret \
-    --from-file htpasswd=/tmp/htpasswd -n openshift-config
+    oc set data secret/htpasswd-secret --from-file htpasswd=/tmp/htpasswd -n openshift-config
 
 #### Deleting Users and Identities
-    oc extract secret/htpasswd-secret -n openshift-config \
-    --to /tmp/ --confirm /tmp/htpasswd
+    oc extract secret/htpasswd-secret -n openshift-config --to /tmp/ --confirm /tmp/htpasswd
 
     htpasswd -D /tmp/htpasswd manager
 
-    oc set data secret/htpasswd-secret \
-    --from-file htpasswd=/tmp/htpasswd -n openshift-config
+    oc set data secret/htpasswd-secret --from-file htpasswd=/tmp/htpasswd -n openshift-config
 
     oc delete user manager
 
