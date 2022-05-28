@@ -19,7 +19,7 @@
 #### Updating the OAuth Custom Resource
     oc get oauth cluster -o yaml > oauth.yaml
     
-Modify oauth.yaml file
+#### Modify oauth.yaml file
 
     apiVersion: config.openshift.io/v1
     kind: OAuth
@@ -34,7 +34,7 @@ Modify oauth.yaml file
           fileData:
             name: htpasswd-secret
     
-update the oauth
+#### update the oauth
     oc replace -f oauth.yaml
 
 #### Extracting Secret Data
