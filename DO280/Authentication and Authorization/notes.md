@@ -84,3 +84,9 @@ spec:
 | edit                     | Users with this role can create, change, and delete common application resources but not management resources                       |
 | self-provisioner         | Users with this role can create new projects. This is a cluster role, not a project role.                                           |
 | view                     | Users with this role can view project resources, but cannot modify project resources.                                               |
+
+### Managing RBAC Using the CLI
+**Add a cluster role to a user**
+    ```
+    oc adm policy add-cluster-role-to-user cluster-role username
+    ```
