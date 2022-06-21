@@ -51,3 +51,14 @@
     oc get pod --loglevel 6
     oc get pod --loglevel 10
     oc whoami -t
+
+#### Create PVC and attach to the deployment on the fly
+    oc set volumes deployment/deployment-name \
+        --add --name vol-name --type pvc --clam-class class-name \
+        --claim-mode rwo --claim-size 15Gi --mount-path /var/lib/app \
+        --clain-name claim-name
+
+#### Attaching a PVC to the deployment when PVC already exists
+    oc set volumes deployment/deployment-name \
+        --add --name vol-name --type pvc \
+        --claim-name clami-name --mount-path /var/lib/app
