@@ -8,6 +8,6 @@ Source to Image
 Builder Image Stream points to builder image (Application runtime + common dependencies for runtime)
 
 Scripts: |
-    👉  assemble --> builds application using source code
-    👉  run --> sets the entrypoint for the application
-    👉  save-artifacts --> saves build dependencies and recycles them next time when we build application (oc start-build)
+1. 👉  assemble --> builds application using source code
+2. 👉  run --> sets the entrypoint for the application
+3. 👉  save-artifacts --> saves build dependencies and recycles them next time when we build application (oc start-build)
