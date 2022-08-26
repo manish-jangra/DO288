@@ -67,3 +67,24 @@ env:
 ```
 >**Attention**
 {{ .name }} && {{ .value }} shoudl be enclosed in quotes.
+
+## Kustomize
+
+👉 That's how Kustomize application looks like
+
+```
+openshift-kustomize
+├── base
+│   ├── deployment.yaml
+│   └── kustomization.yaml
+└── overlay
+    ├── development
+    │   ├── kustomization.yaml
+    │   └── patch.yaml
+    ├── production
+    │   ├── kustomization.yaml
+    │   └── patch.yaml
+    └── staging
+        ├── kustomization.yaml
+        └── patch.yaml
+```
