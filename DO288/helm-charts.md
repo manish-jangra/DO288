@@ -97,3 +97,35 @@ openshift-kustomize
         ├── kustomization.yaml
         └── patch.yaml
 ```
+
+base/kustomization.yaml
+```yaml
+resources:
+- deployment.yaml
+```
+
+overlay/production/kustomization.yaml
+```yaml
+bases:
+- ../../base
+patches:
+- patch.yaml
+```
+
+overlay/production/patch.yaml
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-name
+spec:
+  replicas: 5
+  template:
+    spec:
+      containers:
+        - name: container-name
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "250m"
+```
