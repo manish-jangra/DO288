@@ -30,29 +30,19 @@ export APP_URL=$(oc get route/hello-s2i -o jsonpath='{.spec.host}{"\n"}')
 
 helm create openshift
 
+```
 openshift
 ├── Chart.yaml
-
 ├── charts
-
 ├── templates
-
 │   ├── NOTES.txt
-
 │   ├── _helpers.tpl
-
 │   ├── deployment.yaml
-
 │   ├── hpa.yaml
-
 │   ├── ingress.yaml
-
 │   ├── service.yaml
-
 │   ├── serviceaccount.yaml
-
 │   └── tests
-
 │       └── test-connection.yaml
-
 └── values.yaml
+```
