@@ -33,6 +33,9 @@ dependencies:
     version: 3.2.1
     repository: https://helmrepo.example.com/charts
 ```
+Run the following command after adding dependencies to **Charts.yaml**
+
+    helm dependency update
 
 👉 Variable values are added to **values.yaml**
 
@@ -67,6 +70,12 @@ env:
 ```
 >**Attention**
 {{ .name }} && {{ .value }} shoudl be enclosed in quotes.
+
+Extract Application deployment files from Helm Charts (combined eg deployment, service, route, statefulsets etc) usng the following comamnd 
+
+    helm template app-name helm-directory > base/deployment.yaml
+
+👉 app-name --> Helm Application Name && helm-directory --> directory where helm chart related files are available
 
 ## Kustomize
 
