@@ -25,3 +25,22 @@ oc import-image s2i-do288-httpd --from quay.io/${RHT_OCP4_QUAY_USER}/s2i-do288-h
 skopeo copy containers-storage:localhost/s2i-do288-httpd docker://quay.io/${RHT_OCP4_QUAY_USER}/s2i-do288-httpd —format v2s
 
 export APP_URL=$(oc get route/hello-s2i -o jsonpath='{.spec.host}{"\n"}')
+
+### Helm Charts
+
+helm create openshift
+
+openshift
+├── Chart.yaml
+├── charts
+├── templates
+│   ├── NOTES.txt
+│   ├── _helpers.tpl
+│   ├── deployment.yaml
+│   ├── hpa.yaml
+│   ├── ingress.yaml
+│   ├── service.yaml
+│   ├── serviceaccount.yaml
+│   └── tests
+│       └── test-connection.yaml
+└── values.yaml
