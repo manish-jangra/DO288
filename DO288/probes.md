@@ -20,6 +20,8 @@ Liveness probes determine whether or not an application running in a container i
 
 The liveness probe is configured in the spec.containers.livenessprobe attribute of the pod configuration
 
+**Red Hat OpenShift provides five options that control these probes:** 👇
+
 | Name               | Mandatory  | Description                                                                                               | Default Value |
 | -------------------| -----------| ----------------------------------------------------------------------------------------------------------|---------------|
 | initialDelaySeconds| Yes        | Determines how long to wait after the container starts before beginning the probe.                        |     0         |
@@ -27,3 +29,41 @@ The liveness probe is configured in the spec.containers.livenessprobe attribute 
 | periodSeconds      | No         | Specifies the frequency of the checks.                                                                    |     1         |
 | successThreshold   | No         | Specifies the minimum consecutive successes for the probe to be considered successful after it has failed.|     1         |
 | failureThreshold   | No         | Specifies the minimum consecutive failures for the probe to be considered failed after it has succeeded.  |     3         |
+
+### **Methods of Checking Application Health** 👇
+#### HTTP Checks
+An HTTP check is ideal for applications that return HTTP status codes, such as REST APIs. HTTP probe uses GET requests to check the health of an application. The check is successful if the HTTP response code is in the range 200-399.
+
+```YAML
+readinessProbe:
+  httpGet:
+    path: /health
+    port: 8080
+  initialDelaySeconds: 15
+  timeoutSeconds: 1
+```
+
+#### Container Execution Checks
+Container execution checks are ideal in scenarios where you must determine the status of the container based on the exit code of a process or shell script running in the container. When using container execution checks, Red Hat OpenShift executes a command inside the container. Exiting the check with a status of 0 is considered a success. All other status codes are considered a failure
+
+```YAML
+livenessProbe:
+  exec:
+    command:
+    - cat
+    - /tmp/health
+  initialDelaySeconds: 15
+  timeoutSeconds: 1
+```
+#### TCP Socket Checks
+A TCP socket check is ideal for applications that run as daemons, and open TCP ports, such as database servers, file servers, web servers, and application servers.
+
+When using TCP socket checks, Red Hat OpenShift attempts to open a socket to the container. The container is considered healthy if the check can establish a successful connection
+
+```YAML
+livenessProbe:
+  tcpSocket:
+    port: 8080
+  initialDelaySeconds: 15
+  timeoutSeconds: 1
+```
