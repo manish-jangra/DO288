@@ -67,3 +67,7 @@ livenessProbe:
   initialDelaySeconds: 15
   timeoutSeconds: 1
 ```
+
+#### Set probes using command line
+    oc set probe deployment myapp --liveness --get-url=http://:8080/healthz --initial-delay-seconds=30 --timeout-seconds=2
+    oc set probe deployment myapp --liveness --get-url=http://:8080/ready --initial-delay-seconds=30 --timeout-seconds=2
