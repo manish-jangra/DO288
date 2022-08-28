@@ -3,7 +3,18 @@
 
 #### Custom Deployment Strategies
 
-1. Rolling
+1. **Rolling**
+    The rolling strategy is the default strategy
+    This strategy progressively replaces instances of the previous version of an application with instances of the new version of the application. This strategy executes the readiness probe to determine when new pod is ready. After a readiness probe for the new pod succeeds, the deployment controller scales down the old pod.
+
+    If a significant issue occurs, the deployment controller aborts the rolling deployment. Developers can also manually abort the rolling deployment by using the **oc rollout cancel command**
+
+    Rolling deployments in Red Hat OpenShift are canary deployments; Red Hat OpenShift tests a new version (the canary) before replacing all of the old instances. If the readiness probe never succeeds, Red Hat OpenShift removes the canary instance and automatically rolls back the deployment configuration.
+
+    Use a rolling deployment strategy when:
+    1. You require no downtime during an application update.
+    2. Your application supports running an older version and a newer version at the same time.
+
 2. **Recreate**
     In this strategy, Red Hat OpenShift first stops all the pods that are currently running and only then starts up pods with the new version of the application. This strategy incurs downtime because, for a brief period, no instances of your application are running.
     Use a recreate deployment strategy when:
