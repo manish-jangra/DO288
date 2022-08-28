@@ -27,3 +27,4 @@
 
 #### Rollout the changes manually when triggers are already removed from DeploymentConfig
     oc rollout latest dc/mysql
+    
