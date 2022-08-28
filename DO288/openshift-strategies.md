@@ -8,9 +8,9 @@
     In this strategy, Red Hat OpenShift first stops all the pods that are currently running and only then starts up pods with the new version of the application. This strategy incurs downtime because, for a brief period, no instances of your application are running.
     Use a recreate deployment strategy when:
 
-        • Your application does not support running an older version and a newer version at the same time.
-        • Your application uses a persistent volume with RWO (ReadWriteOnce) access mode, which does not allow writes from multiple pods.
-        
+    1. Your application does not support running an older version and a newer version at the same time.
+    2. Your application uses a persistent volume with RWO (ReadWriteOnce) access mode, which does not allow writes from multiple pods.
+
 3. Custom
 
 #### Life-cycle Hooks
