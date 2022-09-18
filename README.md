@@ -25,3 +25,5 @@ This will display a line that incluness liveness or Liveness (-i for remove case
 
 #### 👉 How to use jq
     oc get dc/hello1 -o json | jq 'spec.template.spec.containers[0].image'
+
+oc patch pv/cmf-logs-dev -p '{"spec":{"claimRef": null}}'
