@@ -26,4 +26,7 @@ This will display a line that incluness liveness or Liveness (-i for remove case
 #### 👉 How to use jq
     oc get dc/hello1 -o json | jq 'spec.template.spec.containers[0].image'
 
-oc patch pv/cmf-logs-dev -p '{"spec":{"claimRef": null}}'
+    oc patch pv/cmf-logs-dev -p '{"spec":{"claimRef": null}}'
+
+#### Allow to use image stream from another project
+    oc policy add-role-to-group -n project system:image-puller system:serviceaccounts:project-name
