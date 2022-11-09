@@ -30,3 +30,7 @@ This will display a line that incluness liveness or Liveness (-i for remove case
 
 #### Allow to use image stream from another project
     oc policy add-role-to-group -n project system:image-puller system:serviceaccounts:project-name
+    
+#### Gracefully restart the cluster nodes
+    oc adm cordon <node-name>
+    oc adm drain <node-name> --ignore-daemonsets=true --delete-emptydir-data=true --force
