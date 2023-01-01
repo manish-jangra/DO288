@@ -34,3 +34,15 @@ This will display a line that incluness liveness or Liveness (-i for remove case
 #### Gracefully restart the cluster nodes
     oc adm cordon <node-name>
     oc adm drain <node-name> --ignore-daemonsets=true --delete-emptydir-data=true --force
+#### Test Map
+      ------------------------
+      |          |           |
+      |   Bed    |  Living   |
+      |   Room   |   Room    |
+      |          |           |
+      |----------|-----------|
+      |          |           |
+      |  Kitchen |  Dining   |
+      |          |   Room    |
+      ------------------------
+
