@@ -46,3 +46,4 @@ This will display a line that incluness liveness or Liveness (-i for remove case
       |          |   Room    |
       ------------------------
 
+https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
