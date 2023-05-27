@@ -36,7 +36,7 @@ This will display a line that incluness liveness or Liveness (-i for remove case
     oc adm drain <node-name> --ignore-daemonsets=true --delete-emptydir-data=true --force
     
 #### Podman Hack
-    ```podman system connection default podman-machine-default```
+    podman system connection default podman-machine-default
     
 #### Test Map
       ------------------------
