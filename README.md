@@ -37,6 +37,12 @@ This will display a line that incluness liveness or Liveness (-i for remove case
     
 #### Podman Hack
     podman system connection default podman-machine-default
+
+#### Git Hacks
+    ```BASH
+    git branch --delete old-branch
+    git push origin --delete old-branch
+    ```
     
 #### Test Map
       ------------------------
