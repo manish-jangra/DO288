@@ -1,0 +1,32 @@
+site_name: Developer Platform Documentation
+site_description: Developer Platform Documentation
+repo_url: https://gitlab.cee.redhat.com/devhub/devhub-poc
+docs_dir: docs
+
+plugins:
+  - techdocs-core
+  - search
+
+theme:
+  name: material
+  palette:
+    primary: 'red'
+    accent: 'grey'
+  features:
+    - navigation.tabs
+    - navigation.instant
+    - navigation.indexes
+    - navigation.top
+    - navigation.sections
+    - toc.integrate
+    - toc.follow
+    - content.code.copy
+
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+
+nav:
+  - Overview:
+      - What is Red Hat Developer Hub?: 'DO280/Authentication and Authorization/notes.md'

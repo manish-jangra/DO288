@@ -1,0 +1,13 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: manish-notes
+  description: Openshift Notes
+  annotations:
+    backstage.io/source-location: url:https://github.com/manish-jangra/openshif/-/tree/main
+    backstage.io/techdocs-ref: url:https://github.com/manish-jangra/openshift/-/tree/main
+    backstage.io/view-url: https://github.com/manish-jangra/openshift/blob/main/catalog-info.yaml
+spec:
+  type: service
+  lifecycle: stage
+  owner: manish
