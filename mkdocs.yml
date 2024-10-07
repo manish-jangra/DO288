@@ -1,32 +1,26 @@
-site_name: Developer Platform Documentation
-site_description: Developer Platform Documentation
-repo_url: https://gitlab.cee.redhat.com/devhub/devhub-poc
+site_name: Manish Notes
+site_description: Openshift Notes Prepared by Manish
+repo_url: https://github.com/manish-jangra/openshift
 docs_dir: docs
 
 plugins:
   - techdocs-core
-  - search
-
-theme:
-  name: material
-  palette:
-    primary: 'red'
-    accent: 'grey'
-  features:
-    - navigation.tabs
-    - navigation.instant
-    - navigation.indexes
-    - navigation.top
-    - navigation.sections
-    - toc.integrate
-    - toc.follow
-    - content.code.copy
-
-markdown_extensions:
-  - admonition
-  - toc:
-      permalink: true
 
 nav:
-  - Overview:
-      - What is Red Hat Developer Hub?: 'DO280/Authentication and Authorization/notes.md'
+  - DO288:
+    - Containerfile: "DO288/container-file.md"
+    - s2i Builds: "DO288/custom-source-to-image-builds.md"
+    - Helm Charts: "DO288/helm-charts.md"
+    - Jkube: "DO288/jkube.md"
+    - Command Line: "DO288/managing_apps_cli.md"
+    - Strategy: "DO288/openshift-strategies.md"
+    - Probes: "DO288/probes.md"
+    - Scopeo: "DO288/skopeo.md"
+  - DO280:
+    - Authentication: "DO280/Authentication and Authorization/notes.md"
+    - Troubleshooting: "DO280/Cluster Troubleshooting/notes.md"
+    - Storage: "DO280/OpenShift Dynamic Storage/notes.md"
+    - Security: "DO280/configuring-security/notes.md"
+    - Networking: "DO280/openshift_networking/notes.md"
+  - Prometheus:
+    - Introduction: "Prometheus/notes.md"
